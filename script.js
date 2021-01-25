@@ -1,3 +1,4 @@
+//METADATA API CALL
 let metadataRequest = new XMLHttpRequest();
 
 metadataRequest.open('GET', 'https://api.tomtom.com/map/1/glyph/20.0.0-8/metadata.json?key=aF6RzykjXBBSEAaHf396gG3qq5YRGerX');
@@ -29,6 +30,7 @@ metadataRequest.onload = function() {
 metadataRequest.send();
 
 
+//RESOURCE METHOD API CALL
 setTimeout(function(){
     let resourceRequest = new XMLHttpRequest();
 
@@ -60,3 +62,38 @@ setTimeout(function(){
 
     resourceRequest.send();
 }, 500);
+
+
+//MERGED STYLE METHOD API CALL
+setTimeout(function(){
+    let mergedRequest = new XMLHttpRequest();
+
+    mergedRequest.open('GET', 'https://api.tomtom.com/map/1/style/20.0.0-8/basic_main.json?key=aF6RzykjXBBSEAaHf396gG3qq5YRGerX');
+
+    mergedRequest.onload = function() {
+        let mergedResponse = mergedRequest.response;
+        let mergedData = JSON.parse(mergedResponse).layers;
+        console.log(mergedData);
+
+        //Create Header and unordered list elements
+        let mergedHeader = document.createElement("h1");
+        mergedHeader.innerHTML = "Merged Style API";
+        document.body.appendChild(mergedHeader);
+        let mergedUL = document.createElement("ul");
+        document.body.appendChild(mergedUL);
+
+        //Iterate through the JSON data to display the information
+        for(item in mergedData){
+            let mergedElement = document.createElement('li');
+            mergedElement.innerHTML = `${item} ID: ${mergedData[item].id} / Type: ${mergedData[item].type}`;
+            mergedUL.appendChild(mergedElement);
+
+        }
+        
+        let responseHR = document.createElement("hr");
+        document.body.appendChild(responseHR);
+    };
+
+    mergedRequest.send();
+}, 1000);
+
