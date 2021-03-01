@@ -1,7 +1,7 @@
 //METADATA API CALL
 let metadataRequest = new XMLHttpRequest();
 
-metadataRequest.open('GET', 'https://api.tomtom.com/map/1/glyph/20.0.0-8/metadata.json?key=606INsRxIwynAL0RuQXRS0Iy5tvlT30CTcO1-lerTtY');
+metadataRequest.open('GET', 'https://api.tomtom.com/map/1/glyph/20.0.0-8/metadata.json?key=5Wg5wU3exfDgYYl9dbGfyJTr3NI57sAR');
 
 metadataRequest.onload = function() {
     let metadataResponse = metadataRequest.response;
@@ -34,7 +34,7 @@ metadataRequest.send();
 setTimeout(function(){
     let resourceRequest = new XMLHttpRequest();
 
-    resourceRequest.open('GET', 'https://api.tomtom.com/map/1/style/20.0.0-8/basic_main.json?key=606INsRxIwynAL0RuQXRS0Iy5tvlT30CTcO1-lerTtY');
+    resourceRequest.open('GET', 'https://api.tomtom.com/map/1/style/20.0.0-8/basic_main.json?key=5Wg5wU3exfDgYYl9dbGfyJTr3NI57sAR');
 
     resourceRequest.onload = function() {
         let resourceResponse = resourceRequest.response;
@@ -68,7 +68,7 @@ setTimeout(function(){
 setTimeout(function(){
     let mergedRequest = new XMLHttpRequest();
 
-    mergedRequest.open('GET', 'https://api.tomtom.com/map/1/style/20.0.0-8/basic_main.json?key=606INsRxIwynAL0RuQXRS0Iy5tvlT30CTcO1-lerTtY');
+    mergedRequest.open('GET', 'https://api.tomtom.com/map/1/style/20.0.0-8/basic_main.json?key=5Wg5wU3exfDgYYl9dbGfyJTr3NI57sAR');
 
     mergedRequest.onload = function() {
         let mergedResponse = mergedRequest.response;
